@@ -4,14 +4,24 @@
   "description": "Texas cities suggestion API",
   "main": "server/app.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "start": "node server/app.js "
   },
   "author": "Gabriel Acosta",
   "license": "MIT",
   "devDependencies": {
+    "expect": "^1.20.2",
     "grunt": "^0.4.5",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-express-server": "^0.5.3"
+    "grunt-express-server": "^0.5.3",
+    "grunt-mocha-istanbul": "^5.0.2",
+    "grunt-mocha-test": "^0.12.7",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2",
+    "node-mocks-http": "^1.5.3",
+    "proxyquire": "^1.7.10",
+    "sinon": "^1.17.5",
+    "sinon-as-promised": "^4.0.2"
   },
   "dependencies": {
     "express": "^4.14.0",

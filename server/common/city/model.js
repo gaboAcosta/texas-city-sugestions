@@ -40,10 +40,20 @@
       this._searchLatitude = parseFloat(longitude);
     }
 
-    constructor(cityJson){
-      this.name = cityJson.name;
-      this.longitude = parseFloat(cityJson.primary_longitude);
-      this.latitude = parseFloat(cityJson.primary_latitude);
+    constructor(cityJSON){
+      this.validateCityJSON(cityJSON);
+      this.name = cityJSON.name;
+      this.longitude = parseFloat(cityJSON.primary_longitude);
+      this.latitude = parseFloat(cityJSON.primary_latitude);
+    }
+
+    validateCityJSON(cityJSON){
+      const parameters = ['name', 'primary_longitude', 'primary_latitude'];
+      parameters.map(function (param) {
+        if(cityJSON[param] === undefined){
+          throw new Error('Invalid City JSON provided')
+        }
+      })
     }
 
     toJSON(){
